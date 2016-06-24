@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Zena.RegisterPage">
+	<ContentPage.Content>
+		<StackLayout>
+			<Entry
+				Placeholder="Email"
+				x:Name="EmailEntry"
+				/>
+			<Entry 
+				Placeholder="Password"
+				IsPassword="true"
+				x:Name="PasswordEntry"
+				VerticalOptions="StartAndExpand" />
+
+			<Entry 
+				Placeholder="Confirm Password"
+				IsPassword="true"
+				x:Name="PasswordConfirmEntry"
+				VerticalOptions="StartAndExpand" />
+			
+			<Button
+				x:Name="RegisterButton"
+				VerticalOptions="End"
+				Clicked="OnRegisterButtonClicked"
+				Text="Register" />
+			<Button
+				x:Name="CancelButton"
+				VerticalOptions="End"
+				Clicked="OnCancelButtonClicked"
+				Text="Cancel" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

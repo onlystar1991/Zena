@@ -2,7 +2,7 @@
 
 namespace Zena
 {
-	public partial class ZenaPage : ContentPage
+	public partial class ZenaPage : TabbedPage
 	{
 		public ZenaPage()
 		{
