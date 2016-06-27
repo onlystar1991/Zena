@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="Zena.Learn.LearnSectionPage" >
+	<StackLayout>
+		<StackLayout Style="{StaticResource MainHeaderBarStyle}" >
+			<StackLayout WidthRequest="100" HorizontalOptions="Start" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+				<Image Source="back_read.png" WidthRequest="53" HeightRequest="38" />
+			</StackLayout>
+			<StackLayout WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Padding="0, 10, 0, 0">
+				<Image Source="actozen_community.png" WidthRequest="50" HeightRequest="50"></Image>
+				<Label Text="What's New" TextColor="Gray" FontSize="15" HorizontalOptions="Center" FontFamily="Gotham Book"></Label>
+			</StackLayout>
+			<StackLayout WidthRequest="100" HorizontalOptions="End" VerticalOptions="FillAndExpand">
+				
+			</StackLayout>
+		</StackLayout>
+		<StackLayout BackgroundColor="#aa73af" HeightRequest="3" HorizontalOptions="FillAndExpand">
+		</StackLayout>
+
+		<StackLayout HorizontalOptions="FillAndExpand">
+			<ScrollView>
+				<Grid Padding="20" ColumnSpacing="10" >
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+
+					<ActivityIndicator HorizontalOptions="Center" x:Name="actIndicator2" />
+					<StackLayout x:Name="LearnContentRow" Grid.Column="0" >
+						
+					</StackLayout>
+				</Grid>
+			</ScrollView>
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

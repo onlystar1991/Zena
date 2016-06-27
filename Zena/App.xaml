@@ -6,6 +6,28 @@
 			<Color x:Key="DarkGray">#1abaaf</Color>
 			<Color x:Key="WidgetBackGround">#aa73af</Color>
 
+			<Style x:Key="MainHeaderBarStyle" TargetType="StackLayout">
+				<Setter Property="HeightRequest">
+					<Setter.Value>
+						<OnPlatform x:TypeArguments="x:Double" 
+							Android="78"
+							iOS="85"
+							WinPhone="78"
+							/>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="Orientation" Value="Horizontal" />
+				<Setter Property="VerticalOptions" Value="Start" />
+				<Setter Property="Padding">
+					<Setter.Value>
+						<OnPlatform x:TypeArguments="Thickness" 
+							Android="10, 0, 10, 0"
+							WinPhone="10, 0, 10, 0"
+							iOS="10, 20, 10, 0"
+							/>
+					</Setter.Value>
+				</Setter>
+			</Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

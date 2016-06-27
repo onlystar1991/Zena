@@ -84,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomRenderer\AwesomeRenderer.cs" />
     <Compile Include="CustomRenderer\RoundedBoxViewRenderer.cs" />
+    <Compile Include="CustomRenderer\TabbarCustomeRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -100,6 +101,13 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\community_tab.png" />
+    <AndroidResource Include="Resources\drawable\consult_tab.png" />
+    <AndroidResource Include="Resources\drawable\learn_tab.png" />
+    <AndroidResource Include="Resources\drawable\back_community.png" />
+    <AndroidResource Include="Resources\drawable\back_consult.png" />
+    <AndroidResource Include="Resources\drawable\back_read.png" />
+    <AndroidResource Include="Resources\drawable\actozen_community.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomRenderer\" />

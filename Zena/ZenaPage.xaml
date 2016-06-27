@@ -1,21 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		xmlns:local="clr-namespace:Zena" 
+		xmlns:local="clr-namespace:Zena"
+		xmlns:learn="clr-namespace:Zena.Learn"
 		x:Class="Zena.ZenaPage">
-	<NavigationPage Title="Learn">
+	<NavigationPage Icon="learn_tab.png">
+		<NavigationPage.Title>
+			<OnPlatform x:TypeArguments="x:String" iOS="Learn" Android=" " WinPhone=" " />
+		</NavigationPage.Title>
 		<x:Arguments>
-			<local:LearnSectionPage />
+			<learn:LearnSectionPage />
 		</x:Arguments>
 	</NavigationPage>
 
-	<NavigationPage Title="Community">
+	<NavigationPage Icon="community_tab.png">
+		<NavigationPage.Title>
+			<OnPlatform x:TypeArguments="x:String" iOS="Community" Android=" " WinPhone=" " />
+		</NavigationPage.Title>
 		<x:Arguments>
 			<local:CommunitySectionPage />
 		</x:Arguments>
 	</NavigationPage>
 
-	<NavigationPage Title="Consult">
+	<NavigationPage Icon="consult_tab.png">
+		<NavigationPage.Title>
+			<OnPlatform x:TypeArguments="x:String" iOS="Consult" Android=" " WinPhone=" " />
+		</NavigationPage.Title>
 		<x:Arguments>
 			<local:ConsultSectionPage />
 		</x:Arguments>

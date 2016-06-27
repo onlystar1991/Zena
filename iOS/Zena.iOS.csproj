@@ -129,9 +129,23 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="CustomRenderer\RoundedBoxViewRenderer.cs" />
+    <Compile Include="CustomRenderer\TabbarCustomRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\fontawesome.ttf" />
+    <BundleResource Include="Resources\community_tab.png" />
+    <BundleResource Include="Resources\community_tab%402x.png" />
+    <BundleResource Include="Resources\community_tab%403x.png" />
+    <BundleResource Include="Resources\consult_tab.png" />
+    <BundleResource Include="Resources\consult_tab%402x.png" />
+    <BundleResource Include="Resources\consult_tab%403x.png" />
+    <BundleResource Include="Resources\learn_tab.png" />
+    <BundleResource Include="Resources\learn_tab%402x.png" />
+    <BundleResource Include="Resources\learn_tab%403x.png" />
+    <BundleResource Include="Resources\back_community.png" />
+    <BundleResource Include="Resources\back_consult.png" />
+    <BundleResource Include="Resources\back_read.png" />
+    <BundleResource Include="Resources\actozen_community.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

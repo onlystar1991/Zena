@@ -1,15 +1,21 @@
 ﻿using System;
 using Xamarin.Forms;
 
+using Zena.Network;
+
 namespace Zena
 {
 	public partial class App : Application, ILoginManager
 	{
+		public static HttpHandler _HttpHandler { get; private set; }
+
 		public App()
 		{
+			
 			var isLoggedIn = Properties.ContainsKey("IsLoggedIn") && (bool)Properties["IsLoggedIn"];
 			InitializeComponent();
-
+			//_HttpManager = new HttpManager(new HttpHandler());
+			_HttpHandler = new HttpHandler();
 			MainPage = new ZenaPage();
 
 			//if (isLoggedIn)

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Zena.Learn.LearnSectionListRow"
+		HeightRequest = "100" BackgroundColor="#bbbdc0"
+		Padding="1, 1, 1, 1" >
+	
+		<StackLayout Orientation="Horizontal" Padding="2, 0, 0, 2" BackgroundColor="White">
+			<Image x:Name="LearnContentImage"
+				Source="{Binding openingPicUrl}" 
+				HeightRequest="94" 
+				WidthRequest="94" 
+				HorizontalOptions="Start" VerticalOptions="Center" />
+			<StackLayout Orientation="Vertical" Padding="10, 10">
+				<Label x:Name="LearnContent" Text="{Binding postTitle}" 
+					FontSize="13" TextColor="#aa73af" FontAttributes="Bold" HeightRequest="40" />
+				<Label x:Name="LearnerName" Text="{Binding posterName}" FontSize="11" TextColor="#bbbdc0" />
+			</StackLayout>
+		</StackLayout>
+</ContentView>

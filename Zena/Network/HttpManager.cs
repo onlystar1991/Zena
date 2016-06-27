@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Zena.Models;
 
 namespace Zena.Network
 {
@@ -12,9 +13,9 @@ namespace Zena.Network
 			httpHandler = _httpHandler;
 		}
 
-		public Task Login() 
+		async public Task<List<LearnContentModel>> GetLearnContentList() 
 		{
-			return httpHandler.LoginAsync();
+			return await httpHandler.GetLearnContentList();
 		}
 	}
 }
