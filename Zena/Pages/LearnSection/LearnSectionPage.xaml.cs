@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Zena.Models;
+using Zena.Models.Learn;
 
 namespace Zena.Learn
 {
 	public partial class LearnSectionPage : ContentPage
 	{
+		StackLayout column;
 		public LearnSectionPage()
 		{
 			InitializeComponent();
 			Title = "Learn";
 			NavigationPage.SetHasNavigationBar(this, false);
+			this.column = LearnContentRow;
 		}
 
 		protected async override void OnAppearing()
 		{
+			this.column.Children.Clear();
+			actIndicator2.IsRunning = true;
 			var result = await App._HttpHandler.GetLearnContentList();
 
 			if (result.status.result.Equals("success") && result.status.action.Equals("found"))
@@ -30,29 +34,15 @@ namespace Zena.Learn
 
 		void PopulateList(LearnContentModel learnContentList)
 		{
-			var column = LearnContentRow;
-			column.Children.Clear();
-
-			var itemTapRecognizer = new TapGestureRecognizer();
-			itemTapRecognizer.Tapped += OnItemTapped;
-
 			for (var i = 0; i < learnContentList.data.list.learnContentArray.Count; i++)
 			{
-				var item = new LearnSectionListRow();
-
+				var data = learnContentList.data.list.learnContentArray[i];
+				var item = new LearnSectionListRow(data.id, data.posterIsDoctor);
 				item.BindingContext = learnContentList.data.list.learnContentArray[i];
-				item.GestureRecognizers.Add(itemTapRecognizer);
 				column.Children.Add(item);
 			}
-
 			actIndicator2.IsRunning = false;
 		}
-
-		private async void OnItemTapped(Object sender, EventArgs e)
-		{
-			
-		}
-
 	}
 }
 

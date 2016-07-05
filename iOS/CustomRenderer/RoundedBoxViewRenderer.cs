@@ -4,37 +4,28 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Zena.Custom;
 using Zena.iOS;
+using UIKit;
 
-[assembly: ExportRenderer(typeof(RoundedBoxView), typeof(RoundedBoxViewRenderer))]
+[assembly: ExportRenderer(typeof(RoundedCustomView), typeof(RoundedCustomViewRenderer))]
 
 namespace Zena.iOS
 {
-	public class RoundedBoxViewRenderer : BoxRenderer
+	public class RoundedCustomViewRenderer : ViewRenderer
 	{
-		protected override void OnElementChanged(ElementChangedEventArgs<BoxView> e)
-		{
-			base.OnElementChanged(e);
-
-			if (Element != null)
-			{
-				Layer.MasksToBounds = true;
-				UpdateCornerRadius(Element as RoundedBoxView);
-			}
-		}
+		UIView _view;
 
 		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
 			base.OnElementPropertyChanged(sender, e);
-
-			if (e.PropertyName == RoundedBoxView.CornerRadiusProperty.PropertyName)
-			{
-				UpdateCornerRadius(Element as RoundedBoxView);
-			}
+			_view = NativeView;
+			_view.Layer.BorderWidth = 1;
+			_view.Layer.BorderColor = UIColor.FromRGB(200, 200, 200).CGColor;
+			_view.Layer.CornerRadius = 5;
 		}
 
-		void UpdateCornerRadius(RoundedBoxView box)
+		protected override void OnElementChanged(ElementChangedEventArgs<View> e)
 		{
-			Layer.CornerRadius = (float)box.CornerRadius;
+			base.OnElementChanged(e);
 		}
 	}
 }

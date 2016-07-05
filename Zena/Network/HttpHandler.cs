@@ -7,8 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Zena.Models;
+using Zena.Models.Learn;
+using Zena.Models.LearnByID;
 using Zena.Common;
+
 
 namespace Zena.Network
 {
@@ -41,8 +43,6 @@ namespace Zena.Network
 			string result = "";
 			var response = new HttpResponseMessage();
 
-			var learnList = new List<LearnContentModel>();
-
 			response = await client.PostAsync(server_uri, content);
 
 			if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -52,6 +52,34 @@ namespace Zena.Network
 				return JsonConvert.DeserializeObject<LearnContentModel>(result);
 			}
 			else 
+			{
+				return null;
+			}
+		}
+
+		async public Task<LearnContentByIDModel> GetLearnContentById(int _id)
+		{
+			var request = new RequestModel
+			{
+				requesting = "sr/getLearnContentById",
+				id = _id
+			};
+
+			var json = JsonConvert.SerializeObject(request);
+			var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+			string result = "";
+			var response = new HttpResponseMessage();
+
+			response = await client.PostAsync(server_uri, content);
+
+			if (response.StatusCode == System.Net.HttpStatusCode.OK)
+			{
+				result = response.Content.ReadAsStringAsync().Result;
+
+				return JsonConvert.DeserializeObject<LearnContentByIDModel>(result);
+			}
+			else
 			{
 				return null;
 			}
@@ -68,6 +96,7 @@ namespace Zena.Network
 	{
 		public string requesting { get; set; }
 		public int offset { get; set; }
+		public int id { get; set; }
 		public int limit { get; set; }
 		public string order { get; set; }
 	}

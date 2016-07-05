@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="Zena.Learn.LearnSectionPage" >
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Zena.Learn.LearnContentDetailNotDoctor">
 	<StackLayout>
 		<StackLayout Style="{StaticResource MainHeaderBarStyle}" >
 			<StackLayout WidthRequest="100" HorizontalOptions="Start" VerticalOptions="FillAndExpand" Orientation="Horizontal">
-				<Image Source="back_read.png" WidthRequest="53" HeightRequest="38" />
+				<Image Source="back_read.png" WidthRequest="53" HeightRequest="38">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnBackItemClicked" />
+					</Image.GestureRecognizers>
+				</Image>
 			</StackLayout>
 			<StackLayout WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Padding="0, 10, 0, 0">
 				<Image Source="actozen_community.png" WidthRequest="50" HeightRequest="50"></Image>
@@ -16,20 +20,15 @@
 		</StackLayout>
 		<StackLayout BackgroundColor="#aa73af" HeightRequest="3" HorizontalOptions="FillAndExpand">
 		</StackLayout>
-
-		<StackLayout HorizontalOptions="FillAndExpand">
-			<ScrollView x:Name="LearnContetScrollView">
-				<Grid Padding="20" ColumnSpacing="10" >
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-
-					<ActivityIndicator HorizontalOptions="Center" x:Name="actIndicator2" />
-					<StackLayout x:Name="LearnContentRow" Grid.Column="0" >
-						
-					</StackLayout>
-				</Grid>
-			</ScrollView>
+		<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<!--<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*">
+					</ColumnDefinition>
+				</Grid.ColumnDefinitions>
+			</Grid>-->
+			<Image x:Name="MainImage" HorizontalOptions="Fill"></Image>
 		</StackLayout>
+		
 	</StackLayout>
 </ContentPage>

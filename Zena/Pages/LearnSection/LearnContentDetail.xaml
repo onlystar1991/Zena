@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Zena.Learn.LearnContentDetail"
+		xmlns:custom="clr-namespace:Zena.Custom;assembly=Zena"
+		xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+		>
+	
+	<StackLayout Spacing="0">
+
+		<!-- End Head Bar -->
+		
+		<StackLayout Style="{StaticResource MainHeaderBarStyle}" >
+			<StackLayout WidthRequest="100" HorizontalOptions="Start" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+				<Image Source="back_read.png" WidthRequest="53" HeightRequest="38">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnBackItemClicked" />
+					</Image.GestureRecognizers>
+				</Image>
+			</StackLayout>
+			<StackLayout WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Padding="0, 10, 0, 0">
+				<Image Source="actozen_community.png" WidthRequest="50" HeightRequest="50"></Image>
+				<Label Text="What's New" TextColor="Gray" FontSize="15" HorizontalOptions="Center" FontFamily="Gotham Book"></Label>
+			</StackLayout>
+			<StackLayout WidthRequest="100" HorizontalOptions="End" VerticalOptions="FillAndExpand">
+			</StackLayout>
+		</StackLayout>
+		<StackLayout BackgroundColor="#aa73af" HeightRequest="3" HorizontalOptions="FillAndExpand">
+		</StackLayout>
+
+		<!-- End Head Bar -->
+
+		<StackLayout>
+			<StackLayout HorizontalOptions="FillAndExpand">
+				<Image x:Name="MainImage" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+			</StackLayout>
+			<StackLayout Padding="20">
+				<Label x:Name="PostTitle" TextColor="#aa73af" FontAttributes="Bold" FontSize="14" />
+				<Label x:Name="PosterName" TextColor="Gray" FontSize="12" />
+				<ScrollView HeightRequest="100" >
+					<Label x:Name="PostDescription" TextColor="Gray" FontSize="12"></Label>
+				</ScrollView>
+			</StackLayout>
+			<StackLayout Padding="20, 0">
+				<custom:RoundedCustomView Padding="10">
+					<StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<controls:CircleImage 
+								HeightRequest="30" 
+								WidthRequest="30" 
+								Aspect="AspectFill"
+								x:Name="BottomAvatar" />
+							<Label x:Name="BottomTitle" TextColor="#1abaaf" />
+						</StackLayout>
+						<ScrollView HeightRequest="50" Padding="10, 0">
+							<Label x:Name="PostCommnet" TextColor="Gray" FontSize="12" />
+						</ScrollView>
+						<StackLayout Orientation="Horizontal">
+							<StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal" >
+								<Label VerticalTextAlignment="Center" x:Name="ConsultNum" FontSize="12" TextColor="Gray" />
+								<Label VerticalTextAlignment="Center" 
+									x:Name="ConsultLabel" 
+									FontFamily="FontAwesome"
+									TextColor="#1abaaf"
+									FontSize="12" />
+							</StackLayout>
+							<StackLayout HorizontalOptions="End" Orientation="Horizontal">
+								<Label VerticalTextAlignment="Center" x:Name="LikeNum" FontSize="12" TextColor="Gray" />
+								<Label VerticalTextAlignment="Center" 
+									x:Name="LikeLabel" 
+									FontFamily="FontAwesome" 
+									FontSize="12" 
+									TextColor="#aa73af"
+									/>
+							</StackLayout>
+						</StackLayout>
+					</StackLayout>
+				</custom:RoundedCustomView>
+			</StackLayout>
+		</StackLayout>
+
+	</StackLayout>
+</ContentPage>

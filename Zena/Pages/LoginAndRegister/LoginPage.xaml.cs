@@ -24,7 +24,7 @@ namespace Zena
 			else
 			{
 				// REMEMBER LOGIN STATUS!
-				App.Current.Properties["IsLoggedIn"] = true;
+				Application.Current.Properties["IsLoggedIn"] = true;
 				_ilm.ShowMainPage();
 			}
 		}
